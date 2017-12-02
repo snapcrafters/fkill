@@ -1,10 +1,10 @@
 <h1 align="center">
-  <img src="https://avatars1.githubusercontent.com/u/29598503?v=3&s=256" alt="Project">
+  <img width="360" src="https://rawgit.com/sindresorhus/fkill/master/media/logo.svg" alt="fkill">
   <br />
-  [Project]
+  fkill
 </h1>
 
-<p align="center"><b>This is the snap for [Project]</b>, <i>"Single-line elevator pitch for your amazing snap"</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
+<p align="center"><b>This is the snap for fkill</b>, <i>"Fabulously kill processes. Cross-platform."</i>. It works on Ubuntu, Fedora, Debian, and other major Linux
 distributions.</p>
 
 <!-- Uncomment and modify this when you are provided a build status badge
@@ -15,8 +15,9 @@ distributions.</p>
 
 ## Install
 
+
     sudo apt install snapd-xdg-open
-    sudo snap install my-snap-name
+    sudo snap install fkill
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
