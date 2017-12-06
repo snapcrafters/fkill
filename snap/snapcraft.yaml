@@ -15,3 +15,4 @@ parts:
   fkill:
     plugin: nodejs
     source: https://github.com/sindresorhus/fkill-cli.git
+    source-tag: 'v3.7.0'
