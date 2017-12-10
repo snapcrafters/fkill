@@ -17,7 +17,10 @@ distributions.</p>
 
 
     sudo apt install snapd-xdg-open
-    sudo snap install --channel=beta --devmode fkill
+    sudo snap install --channel=beta fkill
+    sudo snap connect fkill:process-control :process-control
+    sudo snap connect fkill:system-observe :system-observe
+
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 ![fkill](https://raw.githubusercontent.com/sindresorhus/fkill-cli/master/screenshot.gif "fkill")

@@ -4,15 +4,26 @@ summary: Fabulously kill processes. Cross-platform.
 description: |
   A command-line tool for easily and quickly killing processes.
 
-grade: devel
+grade: stable
 confinement: strict
 
 apps:
   fkill:
     command: fkill
+    plugs:
+      - network
+      - process-control
+      - system-observe
 
 parts:
   fkill:
     plugin: nodejs
+
     source: https://github.com/sindresorhus/fkill-cli.git
     source-tag: 'v3.7.0'
+
+  mypackages:
+    plugin: nil
+    stage-packages:
+      - psmisc
+
