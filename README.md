@@ -16,8 +16,7 @@ distributions.</p>
 ## Install
 
 
-    sudo apt install snapd-xdg-open
-    sudo snap install --channel=beta fkill
+    sudo snap install fkill
     sudo snap connect fkill:process-control :process-control
     sudo snap connect fkill:system-observe :system-observe
 
