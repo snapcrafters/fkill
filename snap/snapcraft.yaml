@@ -1,5 +1,5 @@
 name: fkill
-version: '4.0.0'
+version: '5.2.0'
 summary: Fabulously kill processes. Cross-platform.
 description: |
   A command-line tool for easily and quickly killing processes.
@@ -20,7 +20,7 @@ parts:
     plugin: nodejs
 
     source: https://github.com/sindresorhus/fkill-cli.git
-    source-tag: 'v4.0.0'
+    source-tag: 'v5.2.0'
 
   mypackages:
     plugin: nil
