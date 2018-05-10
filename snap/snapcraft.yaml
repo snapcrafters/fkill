@@ -1,6 +1,6 @@
 name: fkill
-version: stable
-version-script: git -C parts/fkill/build describe --tags
+version: latest
+version-script: git -C parts/fkill/build describe --tags | sed 's/v//'
 summary: Fabulously kill processes. Cross-platform.
 description: |
   A command-line tool for easily and quickly killing processes.
@@ -19,23 +19,20 @@ apps:
 parts:
   fkill:
     plugin: nodejs
+    node-engine: 8.11.1
     source: https://github.com/sindresorhus/fkill-cli.git
-    prepare: |
+    override-build: |
       last_committed_tag="$(git describe --tags --abbrev=0)"
+      last_committed_tag_ver="$(echo ${last_committed_tag} | sed 's/v//')"
       last_released_tag="$(snap info fkill | awk '$1 == "beta:" { print $2 }')"
       # If the latest tag from the upstream project has not been released to
       # beta, build that tag instead of master.
-      if [ "${last_committed_tag}" != "${last_released_tag}" ]; then
+      if [ "${last_committed_tag_ver}" != "${last_released_tag}" ]; then
         git fetch
         git checkout "${last_committed_tag}"
-        # XXX The snapcraft go plugin builds a link to the src dir, not to the
-        # build dir. That might be a bug, but let's better checkout both to be
-        # safe that we are not building the wrong thing. --elopio - 20171108
-        cd ../src
-        git checkout "${last_committed_tag}"
       fi
-  mypackages:
-    plugin: nil
+      snapcraftctl build
     stage-packages:
+      - iproute2
+      - libatm1
       - psmisc
-
