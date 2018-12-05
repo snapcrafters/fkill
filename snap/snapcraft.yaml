@@ -9,7 +9,7 @@ confinement: strict
 
 apps:
   fkill:
-    command: fkill
+    command: fkill-cli
     plugs:
       - network
       - process-control
