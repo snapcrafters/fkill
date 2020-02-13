@@ -4,6 +4,7 @@ version-script: git -C parts/fkill/build describe --tags | sed 's/v//'
 summary: Fabulously kill processes. Cross-platform.
 description: |
   A command-line tool for easily and quickly killing processes.
+base: core18
 
 grade: stable
 confinement: strict
