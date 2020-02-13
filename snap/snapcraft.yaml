@@ -4,6 +4,7 @@ version-script: git -C parts/fkill/build describe --tags | sed 's/v//'
 summary: Fabulously kill processes. Cross-platform.
 description: |
   A command-line tool for easily and quickly killing processes.
+base: core18
 
 grade: stable
 confinement: strict
@@ -19,7 +20,6 @@ apps:
 parts:
   fkill:
     plugin: nodejs
-    node-engine: 8.11.1
     source: https://github.com/sindresorhus/fkill-cli.git
     override-build: |
       last_committed_tag="$(git describe --tags --abbrev=0)"
