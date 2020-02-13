@@ -19,7 +19,6 @@ apps:
 parts:
   fkill:
     plugin: nodejs
-    node-engine: 8.11.1
     source: https://github.com/sindresorhus/fkill-cli.git
     override-build: |
       last_committed_tag="$(git describe --tags --abbrev=0)"
